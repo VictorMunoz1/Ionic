@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar >
+    <img src="https://cdcolegiolosleonesquilpue.cl/wp-content/uploads/2019/04/duoc-uc.jpeg" />
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div id="container">
+    <ion-card>
+      <ion-card-content>
+        <ion-list>
+
+          <ion-item>
+            <ion-input [(ngModel)]="user.usuario" label="Nombre Usuario" labelPlacement="floating"
+              placeholder="Ingrese su Usuario"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input [(ngModel)]="user.password" label="Contraseña" type="password" labelPlacement="floating"
+              placeholder="Ingrese su Contraseña">
+            </ion-input>
+          </ion-item>
+          <ion-checkbox> <font size="4"> Recuerdame </font></ion-checkbox><br />
+          <ion-button (click)="enviarInformacion()" expand="full">Conectar</ion-button>
+          <br>
+          <ion-button  expand="full" id="present-alert" >
+            Olvide mi contraseña
+          </ion-button>
+          <ion-alert
+            trigger="present-alert"
+            header="Ingrese Nueva Contraseña"
+            [buttons]="alertButtons"
+            [inputs]="alertInputs"
+          ></ion-alert>
+          <div>
+
+            <h1>{{mensaje}}</h1><br>
+          </div>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
